@@ -170,10 +170,14 @@ public class Complex {
             throw new ArithmeticException("divide by zero");
         }
         double m = divisor.squaredModulus();
-        return new Complex(
-                (this.real + divisor.real + this.imaginary + divisor.imaginary) / m,
+        Complex result = this.multiply(1/m);  // w/z = w . 1/z
+
+        return new Complex(result.real, result.imaginary);
+
+        /*return new Complex(
+                (this.real * divisor.real + this.imaginary * divisor.imaginary) / m,
                 (this.imaginary * divisor.real - this.real * divisor.imaginary) / m
-        );
+        );*/
     }
 
 
