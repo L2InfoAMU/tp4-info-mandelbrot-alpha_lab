@@ -156,7 +156,7 @@ public class Complex {
             throw new ArithmeticException("divide by zero");
         }
         double squaredModulus = squaredModulus();
-        return new Complex(real / squaredModulus, -1*imaginary / squaredModulus);
+        return new Complex(real / squaredModulus, -imaginary / squaredModulus);
     }
 
     /**
@@ -169,15 +169,11 @@ public class Complex {
         if (divisor.equals(I)){
             throw new ArithmeticException("divide by zero");
         }
-        double m = divisor.squaredModulus();
-        Complex result = this.multiply(1/m);  // w/z = w . 1/z
 
-        return new Complex(result.real, result.imaginary);
+        Complex resultOfDivision = this.multiply(divisor.reciprocal());
 
-        /*return new Complex(
-                (this.real * divisor.real + this.imaginary * divisor.imaginary) / m,
-                (this.imaginary * divisor.real - this.real * divisor.imaginary) / m
-        );*/
+        return new Complex(resultOfDivision.real, resultOfDivision.imaginary);
+
     }
 
 
