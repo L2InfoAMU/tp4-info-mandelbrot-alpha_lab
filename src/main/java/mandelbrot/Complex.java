@@ -152,11 +152,11 @@ public class Complex {
      * @return a complex number <code>c</code> such that <code>this * c = 1</code>
      */
     Complex reciprocal() {
-        if (this.equals(ONE)){
+        if (this.equals(ZERO)){
             throw new ArithmeticException("divide by zero");
         }
         double squaredModulus = squaredModulus();
-        return new Complex(real / squaredModulus, -imaginary / squaredModulus);
+        return new Complex(real / squaredModulus, -1*imaginary / squaredModulus);
     }
 
     /**
