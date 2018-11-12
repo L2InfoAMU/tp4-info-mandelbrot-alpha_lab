@@ -166,7 +166,7 @@ public class Complex {
      * @return the complex number <code>this / divisor</code>
      */
     Complex divide(Complex divisor) {
-        if (divisor.equals(I)){
+        if (divisor.equals(ZERO)){
             throw new ArithmeticException("divide by zero");
         }
 
