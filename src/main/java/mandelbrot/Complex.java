@@ -133,7 +133,10 @@ public class Complex {
      * @return <code>||this|| ** 2</code>
      */
     double squaredModulus() {
-        return real * real + imaginary * imaginary;
+        double squaredReal = real*real;
+        double squaredImaginary = imaginary * imaginary;
+
+        return squaredReal + squaredImaginary;
     }
 
     /**
@@ -144,7 +147,6 @@ public class Complex {
     double modulus() {
         return Math.sqrt(squaredModulus());
     }
-
 
     /**
      * reciprocal of a complex number
