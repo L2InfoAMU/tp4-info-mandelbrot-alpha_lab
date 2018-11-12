@@ -121,6 +121,16 @@ public class ComplexTest {
     }
 
     @Test
+    void testScale(){
+        assertEquals(Complex.ZERO, Complex.ONE.scale(0));
+        assertEquals(onePlusI, onePlusI.scale(1));
+        assertEquals(two, Complex.ONE.scale(2) );
+        assertEquals(twoI, Complex.I.scale(2));
+        assertEquals(new Complex(real, imaginary), new Complex(-6.0,5.0).scale(2));
+        assertEquals(new Complex(-real, -imaginary), new Complex(3.0, -2.5).scale(4));
+    }
+
+    @Test
     void testDivide(){
         assertEquals(onePlusI, onePlusI.divide(Complex.ONE));
         assertEquals(new Complex(0.5, 0), Complex.ONE.divide(two));
