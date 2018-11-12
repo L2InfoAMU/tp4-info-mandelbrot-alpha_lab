@@ -141,6 +141,17 @@ public class ComplexTest {
     }
 
     @Test
+    void testSquaredModulus(){
+        assertEquals(0.0, Complex.ZERO.squaredModulus(), Helpers.EPSILON);
+        assertEquals(2.0, oneMinusI.squaredModulus(), Helpers.EPSILON);
+        assertEquals(2.0, onePlusI.squaredModulus(), Helpers.EPSILON);
+        assertEquals(1.0, Complex.I.squaredModulus(), Helpers.EPSILON);
+        assertEquals(1.0, Complex.ONE.squaredModulus(), Helpers.EPSILON);
+        assertEquals(244.0, new Complex(real,imaginary).squaredModulus(), Helpers.EPSILON);
+        assertEquals(0.2, new Complex(0.4,-0.2).squaredModulus(), Helpers.EPSILON);
+    }
+
+    @Test
     void testRotation(){
         assertEquals(Complex.I, Complex.rotation(Math.PI/2));
         assertEquals(minusI, Complex.rotation(-Math.PI/2));
