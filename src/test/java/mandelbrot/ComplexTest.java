@@ -133,6 +133,20 @@ public class ComplexTest {
     }
 
     @Test
+    void testPow(){
+        assertEquals(Complex.ZERO, Complex.ZERO.pow(2));
+        assertEquals(Complex.ONE, Complex.ZERO.pow(0));
+        assertEquals(twoI, onePlusI.pow(2));
+        assertEquals(new Complex(0,-2), oneMinusI.pow(2));
+        assertEquals(new Complex(-2,2), onePlusI.pow(3));
+        assertEquals(new Complex(122,-597),
+                new Complex(2,3).pow(5));
+        assertEquals(new Complex(-119,-120),
+                new Complex(2,3).pow(4));
+        assertEquals(Complex.ONE, new Complex(2,3).pow(0));
+    }
+
+    @Test
     void testConjugate(){
         assertEquals(Complex.ZERO, Complex.ZERO.conjugate());
         assertEquals(Complex.ONE, Complex.ONE.conjugate());
@@ -159,8 +173,6 @@ public class ComplexTest {
         assertEquals(5.0, new Complex(3.0,-4.0).modulus(), Helpers.EPSILON);
         assertEquals(5.0, new Complex(-3.0,4.0).modulus(), Helpers.EPSILON);
         assertEquals(5.0, new Complex(-3.0,-4.0).modulus(), Helpers.EPSILON);
-
-
     }
 
     @Test
