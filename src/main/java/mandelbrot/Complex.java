@@ -134,11 +134,14 @@ public class Complex {
      * @return the complex number {@code this * factor}
      */
     Complex multiply(Complex factor) {
-        return new Complex(
-                this.real * factor.real - this.imaginary * factor.imaginary,
-                this.real * factor.imaginary + this.imaginary * factor.real
-        );
+
+        double realPartOfProduct = this.real * factor.getReal() - this.imaginary * factor.getImaginary();
+        double imaginaryPartOfProduct = this.real * factor.getImaginary() + this.imaginary * factor.getReal();
+
+        return new Complex(realPartOfProduct, imaginaryPartOfProduct);
+
     }
+
 
     /**
      * Squared modulus of a complex number
