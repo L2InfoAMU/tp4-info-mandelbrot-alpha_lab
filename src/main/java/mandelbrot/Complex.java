@@ -95,7 +95,10 @@ public class Complex {
      * @return A complex <code>c</code> such that <code>this + c = 0</code>
      */
     Complex negate() {
-        return new Complex(-1*this.real, -1*this.imaginary);
+        double negationOfRealPart = -1*this.real;
+        double negationOfImaginaryPart = -1*this.imaginary;
+
+        return new Complex(negationOfRealPart, negationOfImaginaryPart);
     }
 
     /**
