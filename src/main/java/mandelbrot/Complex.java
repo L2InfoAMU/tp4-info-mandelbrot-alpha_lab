@@ -220,7 +220,9 @@ public class Complex {
      * @return the complex number <code>lambda * this</code>
      */
     public Complex scale(double lambda) {
-        return new Complex(lambda * real, lambda * imaginary);
+        double realPartOfProduct = lambda * real;
+        double imaginaryPartOfProduct = lambda * imaginary;
+        return new Complex(realPartOfProduct, imaginaryPartOfProduct);
     }
 
 
