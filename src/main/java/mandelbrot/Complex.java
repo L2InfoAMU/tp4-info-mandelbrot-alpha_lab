@@ -120,7 +120,11 @@ public class Complex {
      * @return the complex number <code>this - subtrahend</code>
      */
     Complex subtract(Complex subtrahend) {
-        return new Complex(this.real - subtrahend.real, this.imaginary - subtrahend.imaginary);
+
+        double realPartOfSubtraction = this.real - subtrahend.getReal();
+        double imaginaryPartOfSubtraction = this.imaginary - subtrahend.getImaginary();
+
+        return new Complex(realPartOfSubtraction, imaginaryPartOfSubtraction);
     }
 
     /**
