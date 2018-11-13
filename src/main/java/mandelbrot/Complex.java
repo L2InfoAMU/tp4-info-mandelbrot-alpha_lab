@@ -82,8 +82,11 @@ public class Complex {
      * @return the complex {@code this + addend}
      */
     public Complex add(Complex addend) {
-        return new Complex(this.real + addend.real,
-                this.imaginary + addend.imaginary);
+
+        double realPartOfSum = this.real + addend.getReal();
+        double imaginaryPartOfSum = this.imaginary + addend.getImaginary();
+
+        return new Complex(realPartOfSum, imaginaryPartOfSum);
     }
 
     /**
