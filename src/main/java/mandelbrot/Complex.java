@@ -107,7 +107,10 @@ public class Complex {
      * @return A complex <code>c</code> such that <code>this * c = ||this|| ** 2</code>
      */
     Complex conjugate() {
-        return new Complex(this.real, -1*this.imaginary);
+
+        double negationOfImaginaryPart = -1*this.imaginary;
+
+        return new Complex(this.real, negationOfImaginaryPart);
     }
 
     /**
