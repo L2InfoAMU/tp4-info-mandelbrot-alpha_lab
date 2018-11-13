@@ -198,16 +198,19 @@ public class Complex {
     /**
      * Integral power of a complex number
      *
-     * @param p a non-negative integer
+     * @param exponent a non-negative integer
      * @return the complex number <code>this ** p</code>
      */
-    Complex pow(int p) {
-        if (p == 0)
+    Complex pow(int exponent) {
+        if (exponent == 0)
             return ONE;
-        Complex result = (this.multiply(this)).pow(p / 2);
-        if (p % 2 == 1)
-            result = result.multiply(this);
-        return result;
+
+        Complex resultOfExponentiation = (this.multiply(this)).pow(exponent / 2);
+
+        if (exponent % 2 == 1)
+            resultOfExponentiation = resultOfExponentiation.multiply(this);
+
+        return resultOfExponentiation;
     }
 
     /**
