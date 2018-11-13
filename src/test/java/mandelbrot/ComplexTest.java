@@ -61,12 +61,12 @@ public class ComplexTest {
 
     @Test
     void testReal(){
-        assertEquals(Complex.ZERO, Complex.ONE.real(0.0));
-        assertEquals(Complex.ONE, Complex.I.real(1.0));
-        assertEquals(minusOne, Complex.ZERO.real(-1.0));
-        assertEquals(new Complex(real,0.0), new Complex(real, imaginary).real(real));
-        assertEquals(new Complex(-10.1,0.0), Complex.ONE.real(-10.1));
-        assertEquals(new Complex(-real, 0.0), new Complex(-real, 0.0).real(-real));
+        assertEquals(Complex.ZERO, Complex.real(0.0));
+        assertEquals(Complex.ONE, Complex.real(1.0));
+        assertEquals(minusOne, Complex.real(-1.0));
+        assertEquals(new Complex(real,0.0), Complex.real(real));
+        assertEquals(new Complex(-10.1,0.0), Complex.real(-10.1));
+        assertEquals(new Complex(-real, 0.0), Complex.real(-real));
     }
 
     @Test
