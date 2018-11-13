@@ -190,7 +190,7 @@ public class Complex {
 
         Complex resultOfDivision = this.multiply(divisor.reciprocal());
 
-        return new Complex(resultOfDivision.real, resultOfDivision.imaginary);
+        return new Complex(resultOfDivision.getReal(), resultOfDivision.getImaginary());
 
     }
 
